@@ -1145,3 +1145,76 @@ color: #f16d7f;
 font-size: 16px; /* Приближение из-за подстановки шрифтов */
 font-weight: 700;
 }
+
+//------------------CART--------------------------
+/*.head-of-table {
+	display: flex;
+	justify-content: space-between;
+}*/
+.product-details {
+	display: flex;
+	justify-content: space-between;
+	width: 278px;
+	height: 115px;
+}
+.head-of-table {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 90px;
+	border-bottom: solid 1px #eaeaea;
+}
+.head-of-table p {
+	font-family: Lato;
+	color: #222222;
+	font-size: 13px; /* Приближение из-за подстановки шрифтов */
+	font-weight: 700;
+	line-height: 60px; /* Приближение из-за подстановки шрифтов */
+	text-align: left;
+	text-transform: uppercase;
+}
+.product-in-cart {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 22px;
+	border-bottom: solid 1px #eaeaea;
+}
+.details {
+	float: right;
+}
+.img-mini {
+	float: left;
+	margin-bottom: 25px;
+}
+.details h4 {
+	font-family: Lato;
+	color: #222222;
+	font-size: 13px; /* Приближение из-за подстановки шрифтов */
+	font-weight: 400;
+	text-align: right;
+}
+.details p {
+	font-family: Lato;
+color: #575757;
+font-size: 13px; /* Приближение из-за подстановки шрифтов */
+font-weight: 400;
+line-height: 20px; /* Приближение из-за подстановки шрифтов */
+text-align: left;
+
+
+}
+.details span {
+	font-family: Lato;
+	color: #6f6e6e;
+	font-size: 13px; /* Приближение из-за подстановки шрифтов */
+	font-weight: 300;
+	line-height: 20px; /* Приближение из-за подстановки шрифтов */
+	text-align: left;	
+}
+.shop-shipping p, .unite-price p, .quantyty p,  .Subtotal p {
+	font-family: Lato;
+	color: #656565;
+	font-size: 13px; /* Приближение из-за подстановки шрифтов */
+	font-weight: 400;
+	line-height: 20px; /* Приближение из-за подстановки шрифтов */
+	text-align: left;
+}
