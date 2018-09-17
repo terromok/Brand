@@ -1146,11 +1146,18 @@ font-size: 16px; /* Приближение из-за подстановки шр
 font-weight: 700;
 }
 
-//------------------CART--------------------------
-/*.head-of-table {
+/*//------------------CART--------------------------
+.head-of-table {
 	display: flex;
 	justify-content: space-between;
 }*/
+.container-cart {
+	display: flex;
+	flex-direction: column;
+}
+
+
+
 .product-details {
 	display: flex;
 	justify-content: space-between;
@@ -1177,6 +1184,7 @@ font-weight: 700;
 	justify-content: space-between;
 	margin-top: 22px;
 	border-bottom: solid 1px #eaeaea;
+
 }
 .details {
 	float: right;
@@ -1184,7 +1192,13 @@ font-weight: 700;
 .img-mini {
 	float: left;
 	margin-bottom: 25px;
+	width: 100px;
+	height: 115px;
 }
+/*.img-mini img {
+	width: 100px;
+	height: 115px;
+}*/
 .details h4 {
 	font-family: Lato;
 	color: #222222;

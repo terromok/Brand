@@ -1,41 +1,117 @@
 function buildCart() {
   // Очищаем корзину
-  $('#cart').empty();
+  $('.product-in-cart').empty();
   // Отправляем запрос на получение списка товаров в корзине
   $.ajax({
     url: 'http://localhost:3000/cart',
     dataType: 'json',
     success: function(cart) {
-      // Создаем ul - элемент
+      /*// Создаем ul - элемент
       var $ul = $('<ul />');
-      // Переменная для хранения стоимости товаров в корзине
+      // Переменная для хранения стоимости товаров в корзине*/
       var amount = 0;
 
       // Перебираем товары
       cart.forEach(function(item) {
-        // Создаем товар в списке
-        var $li = $('<li />', {
-          text: item.name + '(' + item.quantity + ')',
-        });
 
-        // Создаем кнопку для удаления товара из корзины
+        // Создаем товар в списке
+        var $product_details = $('<div />', {
+          class: 'product-details',
+        });
+        var $img_mini = $('<div />', {
+          class: 'img-mini',
+        });
+        var $img = $('<img />', {
+          src: './/img/mini/'+item.src,
+          alt: item.alt,
+        });
+        $img_mini.append($img);
+        var $details = $('<div />', {
+          class: 'details',
+        });
+        var $h4 = $('<h4 />', {
+          text: item.name,
+        });
+        var $pColor = $('<p />', {
+          text: 'Color',
+        });
+        var $spanColor = $('<span />', {
+          text: 'Red',
+        });
+        var $pSize = $('<p />', {
+          text: 'Size',
+        });
+        var $spanSize = $('<span />', {
+          text: 'XII',
+        });
+        $details.append($h4);
+        $details.append($pColor);
+        $details.append($spanColor);
+        $details.append($pSize);
+        $details.append($spanSize);
+        $product_details.append($img_mini);
+        $product_details.append($details);
+
+        var $unite_price = $('<div />', {
+          class: 'unite-price',
+        });
+        var $pPrice = $('<p />', {
+          text: '$' + item.price,
+        });
+        $unite_price.append($pPrice);
+
+        var $quantyty = $('<div />', {
+          class: 'quantyty',
+        });
+        var $pQuantyty = $('<p />', {
+          text: item.quantyty,
+        });
+        $quantyty.append($pQuantyty);
+
+        var $shop_shipping = $('<div />', {
+          class: 'shop-shipping',
+        });
+        var $pShop_shipping = $('<p />', {
+          text: 'free',
+        });
+        $shop_shipping.append($pShop_shipping);
+
+        var $Subtotal = $('<div />', {
+          class: 'Subtotal',
+        });
+        var $pSubtotal = $('<p />', {
+          text: item.quantity * item.price,
+        });
+        $Subtotal.append($pSubtotal);
+
+        var $ACTION = $('<div />', {
+          class: 'ACTION',
+        });
+        $('.product-in-cart').append($product_details);
+        $('.product-in-cart').append($unite_price);
+        $('.product-in-cart').append($quantyty);
+        $('.product-in-cart').append($shop_shipping);
+        $('.product-in-cart').append($Subtotal);
+        $('.product-in-cart').append($ACTION);
+
+        /*// Создаем кнопку для удаления товара из корзины
         var $button = $('<button />', {
           text: 'x',
           class: 'delete',
           'data-id': item.id,
           'data-quantity': item.quantity,
-        });
+        });*/
 
         // Суммируем 
         amount += +item.quantity * +item.price;
 
         // Добавляем все в dom
-        $li.append($button);
-        $ul.append($li);
+        /*$li.append($button);
+        $ul.append($li);*/
       });
       // Добавляем все в dom
-      $('#cart').append($ul);
-      $('#cart').append('Total: ' + amount + ' rub.')
+      /*$('#cart').append($ul);
+      $('#cart').append('Total: ' + amount + ' rub.')*/
     }
   })
 }
@@ -55,7 +131,7 @@ function buildGoodsList() {
         class: 'parrent-product',
       });
       var $img = $('<img />', {
-        src: item.src,
+        src: './/img/'+item.src,
         alt: item.alt,
       });
       var $p = $('<p />', {
@@ -70,6 +146,9 @@ function buildGoodsList() {
         'data-id': item.id,
         'data-name': item.name,
         'data-price': item.price,
+        'data-src': item.src,
+        'data-alt': item.alt,
+
       });
       $a.append($img);
       $a.append($p);
@@ -158,6 +237,8 @@ function buildGoodsList() {
             quantity: 1,
             name: $(this).attr('data-name'),
             price: $(this).attr('data-price'),
+            src: $(this).attr('data-src'),
+            alt: $(this).attr('data-alt'),
           }),
           success: function() {
             // Перерисовываем корзину

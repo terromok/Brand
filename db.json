@@ -5,7 +5,7 @@
       "href": "yandex.ru",
       "price": 59,
       "quantityAlll": 4,
-      "src": ".//img/prod1.png",
+      "src": "prod1.png",
       "alt": "prod1",
       "name": "Куртка"
     },
@@ -14,7 +14,7 @@
       "href": "#",
       "price": 55,
       "quantityAlll": 4,
-      "src": ".//img/prod2.png",
+      "src": "prod2.png",
       "alt": "prod2",
       "name": "Шапка"
     },
@@ -23,7 +23,7 @@
       "href": "yandex.ru",
       "price": 59,
       "quantityAlll": 4,
-      "src": ".//img/prod3.png",
+      "src": "prod3.png",
       "alt": "prod3",
       "name": "Шорты"
     },
@@ -32,7 +32,7 @@
       "href": "#",
       "price": 55,
       "quantityAlll": 4,
-      "src": ".//img/prod4.png",
+      "src": "prod4.png",
       "alt": "prod4",
       "name": "Носки"
     },
@@ -41,7 +41,7 @@
       "href": "yandex.ru",
       "price": 59,
       "quantityAlll": 4,
-      "src": ".//img/prod5.png",
+      "src": "prod5.png",
       "alt": "prod5",
       "name": "Рубашка"
     },
@@ -50,7 +50,7 @@
       "href": "#",
       "price": 55,
       "quantityAlll": 4,
-      "src": ".//img/prod6.png",
+      "src": "prod6.png",
       "alt": "prod6",
       "name": "Трусы"
     },
@@ -59,7 +59,7 @@
       "href": "yandex.ru",
       "price": 59,
       "quantityAlll": 4,
-      "src": ".//img/prod7.png",
+      "src": "prod7.png",
       "alt": "prod7",
       "name": "Галстук"
     },
@@ -68,7 +68,7 @@
       "href": "#",
       "price": 55,
       "quantityAlll": 4,
-      "src": ".//img/prod8.png",
+      "src": "prod8.png",
       "alt": "prod8",
       "name": "Ботинки"
     },
@@ -77,41 +77,51 @@
       "href": "yandex.ru",
       "price": 59,
       "quantityAlll": 4,
-      "src": ".//img/prod9.png",
+      "src": "prod9.png",
       "alt": "prod9",
       "name": "Перчатки"
     }
   ],
   "cart": [
     {
-      "id": "5",
-      "quantity": 2,
-      "name": "Рубашка",
-      "price": "59"
-    },
-    {
-      "id": "6",
+      "id": "7",
       "quantity": 1,
-      "name": "Трусы",
-      "price": "55"
-    },
-    {
-      "id": "4",
-      "quantity": 1,
-      "name": "Носки",
-      "price": "55"
+      "name": "Галстук",
+      "price": "59",
+      "src": "prod7.png",
+      "alt": "prod7"
     },
     {
       "id": "8",
       "quantity": 1,
       "name": "Ботинки",
-      "price": "55"
+      "price": "55",
+      "src": "prod8.png",
+      "alt": "prod8"
     },
     {
       "id": "9",
-      "quantity": 2,
+      "quantity": 1,
       "name": "Перчатки",
-      "price": "59"
+      "price": "59",
+      "src": "prod9.png",
+      "alt": "prod9"
+    },
+    {
+      "id": "1",
+      "quantity": 1,
+      "name": "Куртка",
+      "price": "59",
+      "src": "prod1.png",
+      "alt": "prod1"
+    },
+    {
+      "id": "2",
+      "quantity": 1,
+      "name": "Шапка",
+      "price": "55",
+      "src": "prod2.png",
+      "alt": "prod2"
     }
   ]
 }
