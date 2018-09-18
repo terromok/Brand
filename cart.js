@@ -1,13 +1,11 @@
 function buildCart() {
   // Очищаем корзину
-  $('.product-in-cart').empty();
+  $('#container-cart').empty();
   // Отправляем запрос на получение списка товаров в корзине
   $.ajax({
     url: 'http://localhost:3000/cart',
     dataType: 'json',
     success: function(cart) {
-      /*// Создаем ul - элемент
-      var $ul = $('<ul />');
       // Переменная для хранения стоимости товаров в корзине*/
       var amount = 0;
 
@@ -87,31 +85,30 @@ function buildCart() {
         var $ACTION = $('<div />', {
           class: 'ACTION',
         });
-        $('.product-in-cart').append($product_details);
-        $('.product-in-cart').append($unite_price);
-        $('.product-in-cart').append($quantyty);
-        $('.product-in-cart').append($shop_shipping);
-        $('.product-in-cart').append($Subtotal);
-        $('.product-in-cart').append($ACTION);
-
-        /*// Создаем кнопку для удаления товара из корзины
         var $button = $('<button />', {
           text: 'x',
           class: 'delete',
           'data-id': item.id,
           'data-quantity': item.quantity,
-        });*/
+        });
+        $ACTION.append($button);
+
+        var $product_in_cart = $('<div />', {
+          class: 'product-in-cart',
+        });
+        $product_in_cart.append($product_details);
+        $product_in_cart.append($unite_price);
+        $product_in_cart.append($quantyty);
+        $product_in_cart.append($shop_shipping);
+        $product_in_cart.append($Subtotal);
+        $product_in_cart.append($ACTION);
+
+        $('#container-cart').append($product_in_cart);
 
         // Суммируем 
         amount += +item.quantity * +item.price;
 
-        // Добавляем все в dom
-        /*$li.append($button);
-        $ul.append($li);*/
       });
-      // Добавляем все в dom
-      /*$('#cart').append($ul);
-      $('#cart').append('Total: ' + amount + ' rub.')*/
     }
   })
 }
@@ -169,10 +166,10 @@ function buildGoodsList() {
     buildGoodsList();
 
     // Слушаем нажатия на удаление товара из корзины
-    $('#cart').on('click', '.delete', function() {
+    $('#container-cart').on('click', '.delete', function() {
       // Получаем id товара, который пользователь хочет удалить
       var id = $(this).attr('data-id');
-      var entity = $('#cart [data-id="' + id + '"]');
+      var entity = $('.delete [data-id="' + id + '"]');
       if ($(entity).attr('data-quantity') > 1) {
               $.ajax({
           url: 'http://localhost:3000/cart/' + id,
@@ -206,8 +203,8 @@ function buildGoodsList() {
     $('#product-flex').on('click', '.buy', function() {
       // Определяем id товара, который пользователь хочет удалить
       var id = $(this).attr('data-id');
-      // Пробуем найти такой товар в карзине
-      var entity = $('#cart [data-id="' + id + '"]');
+      // Пробуем найти такой товар в корзине
+      var entity = $('.delete [data-id="' + id + '"]');
       if(entity.length) {
         // Товар в корзине есть, отправляем запрос на увеличение количества
         $.ajax({

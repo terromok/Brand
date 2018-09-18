@@ -84,30 +84,6 @@
   ],
   "cart": [
     {
-      "id": "7",
-      "quantity": 1,
-      "name": "Галстук",
-      "price": "59",
-      "src": "prod7.png",
-      "alt": "prod7"
-    },
-    {
-      "id": "8",
-      "quantity": 1,
-      "name": "Ботинки",
-      "price": "55",
-      "src": "prod8.png",
-      "alt": "prod8"
-    },
-    {
-      "id": "9",
-      "quantity": 1,
-      "name": "Перчатки",
-      "price": "59",
-      "src": "prod9.png",
-      "alt": "prod9"
-    },
-    {
       "id": "1",
       "quantity": 1,
       "name": "Куртка",
@@ -122,6 +98,14 @@
       "price": "55",
       "src": "prod2.png",
       "alt": "prod2"
+    },
+    {
+      "id": "3",
+      "quantity": 1,
+      "name": "Шорты",
+      "price": "59",
+      "src": "prod3.png",
+      "alt": "prod3"
     }
   ]
 }
