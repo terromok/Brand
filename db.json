@@ -84,12 +84,6 @@
   ],
   "menu": [
     {
-      "id": "home",
-      "href": "index.html",
-      "name": "home",
-      "submenu": []
-    },
-    {
       "id": "man",
       "href": "#",
       "name": "man",

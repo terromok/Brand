@@ -1,8 +1,8 @@
 function buildMenu() {
   //создаем основной ul
-  var $ul_menu = $('<ul />', {
+  /*var $ul_menu = $('<ul />', {
     class: 'menu',
-  });
+  });*/
   // Отправляем запрос на получение menu
   $.ajax({
     url: 'http://localhost:3000/menu',
@@ -52,13 +52,10 @@ function buildMenu() {
           $mega.append($mega_flex);
         });
 
-
-
-        
         $li_menu.append($mega);
-        $ul_menu.append($li_menu);
+        $('.menu').append($li_menu);
       })
-      $('.nav').append($ul_menu);
+      //$('.nav').append($ul_menu);
     }
   })
 }
