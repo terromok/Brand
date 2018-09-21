@@ -179,7 +179,8 @@
               "href_linc": "#"
             }
           ]
-        },{
+        },
+        {
           "subname": "kids",
           "lincs": [
             {
@@ -244,7 +245,8 @@
               "href_linc": "#"
             }
           ]
-        },{
+        },
+        {
           "subname": "kids",
           "lincs": [
             {
@@ -264,12 +266,10 @@
       ]
     }
   ],
-
-
   "cart": [
     {
       "id": "2",
-      "quantity": 1,
+      "quantity": 2,
       "name": "Шапка",
       "price": "55",
       "src": "prod2.png",
@@ -277,19 +277,27 @@
     },
     {
       "id": "3",
-      "quantity": 1,
+      "quantity": 3,
       "name": "Шорты",
       "price": "59",
       "src": "prod3.png",
       "alt": "prod3"
     },
     {
-      "id": "1",
-      "quantity": 1,
-      "name": "Куртка",
+      "id": "5",
+      "quantity": 2,
+      "name": "Рубашка",
       "price": "59",
-      "src": "prod1.png",
-      "alt": "prod1"
+      "src": "prod5.png",
+      "alt": "prod5"
+    },
+    {
+      "id": "6",
+      "quantity": 2,
+      "name": "Трусы",
+      "price": "55",
+      "src": "prod6.png",
+      "alt": "prod6"
     }
   ]
 }

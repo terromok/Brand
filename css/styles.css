@@ -1156,7 +1156,9 @@ font-weight: 700;
 	flex-direction: column;
 }
 
-
+#cart {
+	display: none;
+}
 
 .product-details {
 	display: flex;

@@ -1,6 +1,7 @@
 function buildCart() {
   // Очищаем корзину
   $('#container-cart').empty();
+  $('#cart').empty();
   // Отправляем запрос на получение списка товаров в корзине
   $.ajax({
     url: 'http://localhost:3000/cart',
@@ -58,13 +59,13 @@ function buildCart() {
         });
         $unite_price.append($pPrice);
 
-        var $quantyty = $('<div />', {
-          class: 'quantyty',
+        var $quantity = $('<div />', {
+          class: 'quantity',
         });
-        var $pQuantyty = $('<p />', {
-          text: item.quantyty,
+        var $pQuantity = $('<p />', {
+          text: item.quantity,
         });
-        $quantyty.append($pQuantyty);
+        $quantity.append($pQuantity);
 
         var $shop_shipping = $('<div />', {
           class: 'shop-shipping',
@@ -78,7 +79,7 @@ function buildCart() {
           class: 'Subtotal',
         });
         var $pSubtotal = $('<p />', {
-          text: item.quantity * item.price,
+          text: '$'+item.quantity * item.price,
         });
         $Subtotal.append($pSubtotal);
 
@@ -92,19 +93,24 @@ function buildCart() {
           'data-quantity': item.quantity,
         });
         $ACTION.append($button);
-
+        var $buttonCart = $('<button />', {
+          text: 'x',
+          class: 'delete',
+          'data-id': item.id,
+          'data-quantity': item.quantity,
+        });
         var $product_in_cart = $('<div />', {
           class: 'product-in-cart',
         });
         $product_in_cart.append($product_details);
         $product_in_cart.append($unite_price);
-        $product_in_cart.append($quantyty);
+        $product_in_cart.append($quantity);
         $product_in_cart.append($shop_shipping);
         $product_in_cart.append($Subtotal);
         $product_in_cart.append($ACTION);
 
         $('#container-cart').append($product_in_cart);
-
+        $('#cart').append($buttonCart);
         // Суммируем 
         amount += +item.quantity * +item.price;
 
@@ -169,7 +175,7 @@ function buildGoodsList() {
     $('#container-cart').on('click', '.delete', function() {
       // Получаем id товара, который пользователь хочет удалить
       var id = $(this).attr('data-id');
-      var entity = $('.delete [data-id="' + id + '"]');
+      var entity = $('#cart [data-id="' + id + '"]');
       if ($(entity).attr('data-quantity') > 1) {
               $.ajax({
           url: 'http://localhost:3000/cart/' + id,
@@ -201,10 +207,10 @@ function buildGoodsList() {
 
     // Слушаем нажатия на кнопку Купить
     $('#product-flex').on('click', '.buy', function() {
-      // Определяем id товара, который пользователь хочет удалить
+      // Определяем id товара, который пользователь хочет купить
       var id = $(this).attr('data-id');
       // Пробуем найти такой товар в корзине
-      var entity = $('.delete [data-id="' + id + '"]');
+      var entity = $('#cart [data-id="' + id + '"]');
       if(entity.length) {
         // Товар в корзине есть, отправляем запрос на увеличение количества
         $.ajax({
