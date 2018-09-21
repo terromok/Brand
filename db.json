@@ -2,7 +2,7 @@
   "goods": [
     {
       "id": 1,
-      "href": "yandex.ru",
+      "href": "#",
       "price": 59,
       "quantityAlll": 4,
       "src": "prod1.png",
@@ -20,7 +20,7 @@
     },
     {
       "id": 3,
-      "href": "yandex.ru",
+      "href": "#",
       "price": 59,
       "quantityAlll": 4,
       "src": "prod3.png",
@@ -38,7 +38,7 @@
     },
     {
       "id": 5,
-      "href": "yandex.ru",
+      "href": "#",
       "price": 59,
       "quantityAlll": 4,
       "src": "prod5.png",
@@ -56,7 +56,7 @@
     },
     {
       "id": 7,
-      "href": "yandex.ru",
+      "href": "#",
       "price": 59,
       "quantityAlll": 4,
       "src": "prod7.png",
@@ -74,7 +74,7 @@
     },
     {
       "id": 9,
-      "href": "yandex.ru",
+      "href": "#",
       "price": 59,
       "quantityAlll": 4,
       "src": "prod9.png",
@@ -82,15 +82,197 @@
       "name": "Перчатки"
     }
   ],
-  "cart": [
+  "menu": [
     {
-      "id": "1",
-      "quantity": 1,
-      "name": "Куртка",
-      "price": "59",
-      "src": "prod1.png",
-      "alt": "prod1"
+      "id": "home",
+      "href": "index.html",
+      "name": "home",
+      "submenu": []
     },
+    {
+      "id": "man",
+      "href": "#",
+      "name": "man",
+      "submenu": [
+        {
+          "subname": "women",
+          "lincs": [
+            {
+              "lincname": "dresses",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "tops",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "Accessories",
+              "href_linc": "#"
+            }
+          ]
+        },
+        {
+          "subname": "man",
+          "lincs": [
+            {
+              "lincname": "dresses",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "tops",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "Accessories",
+              "href_linc": "#"
+            }
+          ]
+        },
+        {
+          "subname": "kids",
+          "lincs": [
+            {
+              "lincname": "dresses",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "tops",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "Accessories",
+              "href_linc": "#"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "women",
+      "href": "#",
+      "name": "women",
+      "submenu": [
+        {
+          "subname": "women",
+          "lincs": [
+            {
+              "lincname": "dresses",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "tops",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "Accessories",
+              "href_linc": "#"
+            }
+          ]
+        },
+        {
+          "subname": "man",
+          "lincs": [
+            {
+              "lincname": "dresses",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "tops",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "Accessories",
+              "href_linc": "#"
+            }
+          ]
+        },{
+          "subname": "kids",
+          "lincs": [
+            {
+              "lincname": "dresses",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "tops",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "Accessories",
+              "href_linc": "#"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Kids",
+      "href": "#",
+      "name": "Kids",
+      "submenu": [
+        {
+          "subname": "women",
+          "lincs": [
+            {
+              "lincname": "dresses",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "tops",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "Accessories",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "tops",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "Accessories",
+              "href_linc": "#"
+            }
+          ]
+        },
+        {
+          "subname": "man",
+          "lincs": [
+            {
+              "lincname": "dresses",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "tops",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "Accessories",
+              "href_linc": "#"
+            }
+          ]
+        },{
+          "subname": "kids",
+          "lincs": [
+            {
+              "lincname": "dresses",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "tops",
+              "href_linc": "#"
+            },
+            {
+              "lincname": "Accessories",
+              "href_linc": "#"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+
+  "cart": [
     {
       "id": "2",
       "quantity": 1,
@@ -106,6 +288,14 @@
       "price": "59",
       "src": "prod3.png",
       "alt": "prod3"
+    },
+    {
+      "id": "1",
+      "quantity": 1,
+      "name": "Куртка",
+      "price": "59",
+      "src": "prod1.png",
+      "alt": "prod1"
     }
   ]
 }
