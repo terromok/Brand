@@ -269,7 +269,7 @@
   "cart": [
     {
       "id": "2",
-      "quantity": 2,
+      "quantity": 1,
       "name": "Шапка",
       "price": "55",
       "src": "prod2.png",
