@@ -5,6 +5,8 @@
 	<title>Checkout</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="login.js"></script>
 </head>
 <body>
 	<header class="header">
@@ -322,8 +324,8 @@
 		            <p>Register with us for future convenience</p><br>
 		            <p>Fast and easy checkout</p>
 		            <p>Easy access to your order history and status</p>
-		            <div class="cont-reg">
-		            	<input type="submit" value= "Continue">
+		            <div class="cont-reg registrator">
+		            	<input id="register" type="submit" value= "Continue">
 		            </div>
 				</div>
 				<div class="login">
@@ -332,15 +334,15 @@
 					<div class="log">
 						<p>EMAIL ADDRESS<em>*</em></p>
 						<br>
-		                <input  placeholder="email@server.com" required pattern="\S+@[a-z]+.[a-z]+">
+		                <input id="login__email" placeholder="email@server.com" required pattern="\S+@[a-z]+.[a-z]+">
 		                <br>
 						<p>password<em>*</em></p>
 						<br>
-			             <input type="password" placeholder="password">
+			             <input id="login__password" type="password" placeholder="password">
 					</div>
 		             <p>* Required Fileds</p>
 		             <div class="cont-reg">
-		             	<input type="submit" value= "Log in"> <a href="#"><p>Forgot Password ?</p></a>
+		             	<input id="login__button" type="submit" value= "Log in"> 
 		             </div>
 		             
 				</div>
