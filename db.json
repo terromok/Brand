@@ -326,22 +326,12 @@
   ],
   "users": [
     {
-      "id_user": 2,
       "username": "terromok@yandex.ru",
-      "password": "fgfgdf",
+      "password": "",
       "email": "terromok@yandex.ru",
       "credit_card": "",
       "bio": "",
       "id": 1
-    },
-    {
-      "id_user": 2,
-      "username": "terromok@yandex.ru",
-      "password": "fgggg",
-      "email": "terromok@yandex.ru",
-      "credit_card": "",
-      "bio": "",
-      "id": 2
     }
   ]
 }

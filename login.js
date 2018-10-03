@@ -27,18 +27,43 @@ function checkUser ($login, $password) {
   })
 }
 
+
+function checkMail (m, p) {
+  var i = 0;
+  $.ajax({
+    url: 'http://localhost:3000/users',
+    dataType: 'json',
+    success: function(users) {
+   
+      // Перебираем пользователей
+      users.forEach(function(user) {
+
+        // Проверяем, есть ли такой пользователь в базе
+        if (user.email == m) {i = 1}
+      });
+      if (i == 1) {
+        alert('Пользрватель уже зарестрирован')
+      } else {
+        registerUser (m, p)
+      }
+    }
+  })
+  
+}
+
+
 function registerUser (m, p) {
   $(".my-acc").empty();
   $(".my-acc").append(m);
   $.ajax({
-
+    
     url: 'http://localhost:3000/users',
     type: 'POST',
     headers: {
       'content-type': 'application/json',
     },
     data: JSON.stringify({
-    id_user: 2,
+    /*id_user: 2,*/
     username: m,
     password: p,
     email: m,
@@ -87,7 +112,7 @@ function registerUser (m, p) {
       
       var p = $(".input_password").val();
       var m = $("#input_email").val();
-      registerUser(m, p);
+      checkMail(m, p);
       });
   })
 })(jQuery);
