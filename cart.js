@@ -2,6 +2,7 @@ function buildCart() {
   // Очищаем корзину
   $('#container-cart').empty();
   $('#cart').empty();
+  $('.totalCart').css('display', 'none');
   // Отправляем запрос на получение списка товаров в корзине
   $.ajax({
     url: 'http://localhost:3000/cart',
@@ -9,6 +10,7 @@ function buildCart() {
     success: function(cart) {
       // Переменная для хранения стоимости товаров в корзине*/
       var amount = 0;
+      var totalCart = 0;
 
       // Перебираем товары
       cart.forEach(function(item) {
@@ -65,6 +67,7 @@ function buildCart() {
         var $pQuantity = $('<p />', {
           text: item.quantity,
         });
+        totalCart +=  item.quantity;
         $quantity.append($pQuantity);
 
         var $shop_shipping = $('<div />', {
@@ -113,7 +116,11 @@ function buildCart() {
         $('#cart').append($buttonCart);
         // Суммируем 
         amount += +item.quantity * +item.price;
-
+        if (totalCart !=0) {
+          $('.totalCart').css('display', 'block');
+          $('.totalCart').empty();
+          $('.totalCart').text(totalCart);
+        }
       });
     }
   })

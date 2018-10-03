@@ -37,6 +37,25 @@ body ul {list-style-type: none;}
 	display: flex;
 	align-items: center;
 }
+.header-right {
+	position: relative;
+}
+.totalCart {
+	position: absolute;
+	left: 23px;
+	top: 30px;
+	display: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background-color: #f16d7f;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 25px;
+
+}
 .header-right img:hover {
 	transform: scale(1.16);
 }
