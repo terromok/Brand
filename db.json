@@ -345,14 +345,5 @@
       "alt": "prod2"
     }
   ],
-  "users": [
-    {
-      "username": "terromok@yandex.ru",
-      "password": "",
-      "email": "terromok@yandex.ru",
-      "credit_card": "",
-      "bio": "",
-      "id": 1
-    }
-  ]
+  "users": []
 }
