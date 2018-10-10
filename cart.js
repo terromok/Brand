@@ -129,47 +129,109 @@ function buildCart() {
 function buildGoodsList() {
   // Запрашиваем список товаров на складе
   $.ajax({
-    url: 'http://localhost:3000/goods',
+    url: 'http://localhost:3000/goods?_start7&_limit8',
     dataType: 'json',
     success: function(cart) {
-      cart.forEach(function(item) {
-      var $a = $('<a />', {
-        href: item.href,
-        class: 'product-item',
-      });
-      var $div = $('<div />', {
-        class: 'parrent-product',
-      });
-      var $img = $('<img />', {
-        src: './/img/'+item.src,
-        alt: item.alt,
-      });
-      var $p = $('<p />', {
-        text: item.name,
-      }); 
-      var $price = $('<span />', {
-        text: '$' + item.price,
-      });
-      var $button = $('<button />', {
-        text: 'Add To Cart',
-        class: 'buy',
-        'data-id': item.id,
-        'data-name': item.name,
-        'data-price': item.price,
-        'data-src': item.src,
-        'data-alt': item.alt,
+      var pages = Math.ceil(cart.length / 9) ;
+      for (var p = 1; p <= pages; p++) {
+        var $page = $('<span />', {
+          text: p,
+          class: 'page' + p,
+        });
+        $page.css('margin', '10px');
+        $('.pages').append($page);
+      }
+      for (var i = 0; i < 9; i++) {
+        var item = cart[i];
 
-      });
-      $a.append($img);
-      $a.append($p);
-      $a.append($price);
-      $div.append($a);
-      $div.append($button);
-      $('#product-flex').append($div);
-      })
+        var $a = $('<a />', {
+          href: item.href,
+          class: 'product-item',
+        });
+        var $div = $('<div />', {
+          class: 'parrent-product',
+        });
+        var $img = $('<img />', {
+          src: './/img/'+item.src,
+          alt: item.alt,
+        });
+        var $p = $('<p />', {
+          text: item.name,
+        }); 
+        var $price = $('<span />', {
+          text: '$' + item.price,
+        });
+        var $button = $('<button />', {
+          text: 'Add To Cart',
+          class: 'buy',
+          'data-id': item.id,
+          'data-name': item.name,
+          'data-price': item.price,
+          'data-src': item.src,
+          'data-alt': item.alt,
+
+        });
+        $a.append($img);
+        $a.append($p);
+        $a.append($price);
+        $div.append($a);
+        $div.append($button);
+        $('#product-flex').append($div);
+      }
     } 
   })
 }
+
+function buildGoodsListPage(page) {
+  // Запрашиваем список товаров на складе
+  $.ajax({
+    url: 'http://localhost:3000/goods',
+    dataType: 'json',
+    success: function(cart) {
+      $('#product-flex').empty();
+      j = page*9;
+      for (var i = j-9; i < j; i++) {
+        var item = cart[i];
+
+        var $a = $('<a />', {
+          href: item.href,
+          class: 'product-item',
+        });
+        var $div = $('<div />', {
+          class: 'parrent-product',
+        });
+        var $img = $('<img />', {
+          src: './/img/'+item.src,
+          alt: item.alt,
+        });
+        var $p = $('<p />', {
+          text: item.name,
+        }); 
+        var $price = $('<span />', {
+          text: '$' + item.price,
+        });
+        var $button = $('<button />', {
+          text: 'Add To Cart',
+          class: 'buy',
+          'data-id': item.id,
+          'data-name': item.name,
+          'data-price': item.price,
+          'data-src': item.src,
+          'data-alt': item.alt,
+
+        });
+        $a.append($img);
+        $a.append($p);
+        $a.append($price);
+        $div.append($a);
+        $div.append($button);
+        $('#product-flex').append($div);
+      }
+    } 
+  })
+ 
+}
+
 
 (function($) {
   $(function() {
@@ -177,6 +239,12 @@ function buildGoodsList() {
     buildCart();
     // Рисуем список товаров
     buildGoodsList();
+    //слушаем нажатие на page
+    $('.pages').on('click', 'span', function() {
+      var page = parseFloat(this.outerText);
+      console.log(page);
+      buildGoodsListPage(page);
+    });
 
     // Слушаем нажатия на удаление товара из корзины
     $('#container-cart').on('click', '.delete', function() {

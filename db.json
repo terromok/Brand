@@ -80,6 +80,51 @@
       "src": "prod9.png",
       "alt": "prod9",
       "name": "Перчатки"
+    },
+    {
+      "id": 10,
+      "href": "#",
+      "price": 595,
+      "quantityAlll": 4,
+      "src": "prod7.png",
+      "alt": "prod7",
+      "name": "Галстук_2"
+    },
+    {
+      "id": 11,
+      "href": "#",
+      "price": 553,
+      "quantityAlll": 4,
+      "src": "prod8.png",
+      "alt": "prod8",
+      "name": "Ботинки_2"
+    },
+    {
+      "id": 12,
+      "href": "#",
+      "price": 591,
+      "quantityAlll": 4,
+      "src": "prod9.png",
+      "alt": "prod9",
+      "name": "Перчатки_2"
+    },
+    {
+      "id": 13,
+      "href": "#",
+      "price": 59,
+      "quantityAlll": 4,
+      "src": "prod5.png",
+      "alt": "prod5",
+      "name": "Рубашка_2"
+    },
+    {
+      "id": 14,
+      "href": "#",
+      "price": 55,
+      "quantityAlll": 4,
+      "src": "prod6.png",
+      "alt": "prod6",
+      "name": "Трусы_4"
     }
   ],
   "menu": [
@@ -266,7 +311,40 @@
       ]
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "id": "10",
+      "quantity": 1,
+      "name": "Галстук2",
+      "price": "59",
+      "src": "prod7.png",
+      "alt": "prod7"
+    },
+    {
+      "id": "11",
+      "quantity": 1,
+      "name": "Ботинки_2",
+      "price": "553",
+      "src": "prod8.png",
+      "alt": "prod8"
+    },
+    {
+      "id": "12",
+      "quantity": 1,
+      "name": "Перчатки_2",
+      "price": "591",
+      "src": "prod9.png",
+      "alt": "prod9"
+    },
+    {
+      "id": "2",
+      "quantity": 1,
+      "name": "Шапка",
+      "price": "55",
+      "src": "prod2.png",
+      "alt": "prod2"
+    }
+  ],
   "users": [
     {
       "username": "terromok@yandex.ru",

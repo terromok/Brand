@@ -11,12 +11,33 @@
 }
 body {
     font-family: 'Lato', sans-serif;
+    position: relative;
 }
 body a {text-decoration: none;}
 body ul {list-style-type: none;}
 .container {
 	margin: 0  auto;
 	width: 1140px ;
+}
+.registrator {
+	position: absolute;
+	z-index: 2;
+	top: 500px;
+	left: 500px;
+	width: 500px;
+	height: 200px;
+	background-color: #f16d7f;
+	display: none;
+	
+}
+.registration {
+	display: flex;
+    align-items: center;
+    flex-flow: column;
+    padding: 20px;
+}
+.registration input {
+	margin: 20px;
 }
 
 .header {
@@ -924,6 +945,9 @@ padding-left: 10px;
 	border-bottom: 2px solid #e8e8e8;
 	padding-top: 31px;
 	padding-bottom: 31px;
+}
+#logout__button {
+	display: none;
 }
 
 /*--------------single-page-------*/
